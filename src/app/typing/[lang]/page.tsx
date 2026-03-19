@@ -68,26 +68,21 @@ export default function DynamicTypingPage() {
   const handleAiGenerate = async () => {
     setIsAiLoading(true);
     try {
-      // Step 1: Try to get existing or trigger silent generation
-      let response = await fetch("/api/paragraphs?language=" + (lang === "hindi" ? "Hindi" : "English"));
-      let data = await response.json();
+      // Use POST for fresh, high-quality AI generation
+      const res = await fetch('/api/paragraphs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          language: lang === "hindi" ? "Hindi" : "English", 
+          difficulty: 'Professional' 
+        })
+      });
+      const data = await res.json();
       
-      if (Array.isArray(data) && data.length > 0) {
-        setPracticeText(data[Math.floor(Math.random() * data.length)].content);
+      if (data && data.content) {
+        setPracticeText(data.content);
       } else {
-        // Step 2: If empty, it means generation might be in progress or failed. Try one more time after a short delay.
-        setIsAiLoading(true);
-        const timer = (ms: number) => new Promise(res => setTimeout(res, ms));
-        await timer(2000); // Wait 2s
-        
-        response = await fetch("/api/paragraphs?language=" + (lang === "hindi" ? "Hindi" : "English"));
-        data = await response.json();
-        
-        if (Array.isArray(data) && data.length > 0) {
-          setPracticeText(data[Math.floor(Math.random() * data.length)].content);
-        } else {
-          alert("AI is preparing fresh content. Please try clicking again in a few seconds.");
-        }
+        alert("AI is preparing fresh content. Please try clicking again in a few seconds.");
       }
     } catch (e) {
       console.error("AI Generation Error:", e);
@@ -219,7 +214,7 @@ export default function DynamicTypingPage() {
                   
                   {practiceText ? (
                     <div className={cn(
-                      "bg-white/5 border border-white/10 rounded-2xl p-6 text-zinc-300 leading-relaxed max-h-40 overflow-y-auto scrollbar-hide",
+                      "bg-white/5 border border-white/10 rounded-2xl p-6 text-zinc-300 leading-relaxed max-h-96 overflow-y-auto scrollbar-hide",
                       lang === 'hindi' ? "font-mangal text-2xl text-left" : "font-sans text-lg italic text-left"
                     )}>
                       {practiceText}

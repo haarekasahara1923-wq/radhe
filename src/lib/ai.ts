@@ -10,13 +10,13 @@ const groq = new Groq({
 });
 
 export async function generateParagraph(language: string, difficulty: string) {
-  const prompt = `Generate an EXTRA LONG typing practice paragraph in ${language} for a professional typing examination. 
+  const prompt = `Generate a VERY LONG typing practice paragraph in ${language} for a professional typing examination. 
+  MANDATORY REQUIREMENT: The paragraph MUST contain exactly between 450 to 550 words. 
   Difficulty: ${difficulty}. 
-  Length: 350-500 words. 
   Topic: Professional workplace scenarios, computer technology history, or academic literature.
   The content MUST be extremely detailed, continuous, and flowing. 
   It must be a single large block of text. Avoid any headers, lists, or quotes.
-  Output ONLY the paragraph text.`;
+  Output ONLY the paragraph text without any introduction or concluding remarks.`;
 
 
   try {
@@ -25,9 +25,9 @@ export async function generateParagraph(language: string, difficulty: string) {
     
     const groqResponse = await groq.chat.completions.create({
       messages: [{ role: "user", content: prompt }],
-      model: "llama-3.1-8b-instant",
-      temperature: 0.7,
-      max_tokens: 2048,
+      model: "llama-3.3-70b-versatile",
+      temperature: 0.8,
+      max_tokens: 3000,
     });
 
     const content = groqResponse.choices[0]?.message?.content || "";
@@ -42,6 +42,7 @@ export async function generateParagraph(language: string, difficulty: string) {
       const response = await openai.chat.completions.create({
         model: "gpt-4o-mini",
         messages: [{ role: "user", content: prompt }],
+        max_tokens: 3000,
       });
 
       const content = response.choices[0]?.message?.content || "";
