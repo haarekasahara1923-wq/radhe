@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
@@ -19,12 +20,13 @@ async function main() {
 
   // 2. Create Sample Student
   await prisma.student.upsert({
-    where: { email: 'student@emax.com' },
+    where: { contact: '1234567890' },
     update: {},
     create: {
       name: 'John Doe',
+      contact: '1234567890',
       email: 'student@emax.com',
-      password: 'password123', // Use bcrypt.hash in real seed
+      password: 'password123',
       instituteId: institute.id,
     },
   });
