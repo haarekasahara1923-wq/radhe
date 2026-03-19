@@ -10,10 +10,10 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2">
               <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                EM
+                VSCC
               </div>
               <span className="text-2xl font-extrabold tracking-tight text-white leading-none">
-                Vivekananda Shorthand<span className="text-brand-primary"> (Steno) & Computer Coaching Classes</span>
+                Vivekananda Shorthand<span className="text-brand-primary"> (Steno)& Computer Classes</span>
               </span>
             </Link>
             <p className="text-zinc-400 text-sm leading-relaxed">
@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium uppercase tracking-widest text-zinc-500">
-          <p>© {new Date().getFullYear()} Vivekananda Shorthand (Steno) & Computer Coaching Classes. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Vivekananda Shorthand (Steno)& Computer Classes. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>

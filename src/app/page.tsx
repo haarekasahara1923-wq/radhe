@@ -25,7 +25,7 @@ import {
 const tools = [
   {
     category: "Typing Tools",
-    icon: <Languages className="text-orange-500" size={24} />,
+    icon: <Languages className="text-brand-primary" size={24} />,
     items: [
       { name: "Hindi Typing", href: "/typing/hindi", desc: "Type in English to get Hindi text" },
       { name: "Marathi Typing", href: "/typing/marathi", desc: "Phonetic Marathi typing tool" },
@@ -101,13 +101,16 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-3xl mx-auto space-y-8">
-            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-100 text-brand-primary px-4 py-1.5 rounded-full text-sm font-bold animate-bounce">
+            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-brand-primary px-4 py-1.5 rounded-full text-sm font-bold animate-bounce">
               <Zap size={16} fill="currentColor" />
               <span>Gwalior&apos;s #1 Computer Education Center</span>
             </div>
             
             <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-zinc-900 leading-[1.1]">
-              Master Skills at <span className="text-brand-primary">Vivekananda Shorthand (Steno) & Computer Coaching Classes</span>
+              Master Skills at <br />
+              <span className="text-brand-primary">Vivekananda</span><br />
+              <span className="text-zinc-700">Shorthand (Steno) &</span><br />
+              <span className="text-brand-primary">Computer Classes</span>
             </h1>
             
             <p className="text-xl text-zinc-500 font-medium">
@@ -117,7 +120,7 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Link 
                 href="/typing-test?lang=English" 
-                className="bg-brand-primary hover:bg-orange-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-orange-500/20 transition-all hover:-translate-y-1 flex items-center gap-2"
+                className="bg-brand-primary hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-blue-500/20 transition-all hover:-translate-y-1 flex items-center gap-2"
               >
                 English Typing Test <ArrowRight size={20} />
               </Link>
@@ -151,7 +154,7 @@ export default function Home() {
       <section className="bg-zinc-900 overflow-hidden py-4 border-y border-white/10">
         <div className="flex whitespace-nowrap animate-marquee">
           {[...Array(10)].map((_, i) => (
-            <span key={i} className="text-orange-400 font-extrabold text-lg uppercase tracking-widest mx-10 flex items-center gap-4">
+            <span key={i} className="text-brand-primary font-extrabold text-lg uppercase tracking-widest mx-10 flex items-center gap-4">
               <Zap size={20} fill="currentColor" />
               ADMISSIONS OPEN 2026 BATCH STARTED! • JOIN NOW
             </span>
@@ -173,7 +176,7 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-24">
           {[
             { title: "Social Media Marketing", desc: "Expert training in Facebook, Instagram & Google Ads to boost any business online.", icon: <TrendingUp className="text-blue-600" />, bgColor: "bg-blue-50" },
-            { title: "DCA / PGDCA", desc: "Get university-recognized diplomas in computer applications for govt & private jobs.", icon: <FileText className="text-orange-600" />, bgColor: "bg-orange-50" },
+            { title: "DCA / PGDCA", desc: "Get university-recognized diplomas in computer applications for govt & private jobs.", icon: <FileText className="text-blue-600" />, bgColor: "bg-blue-50" },
             { title: "Tally Prime with GST", desc: "Master professional accounting, inventory management, and GST filing from scratch.", icon: <BadgeCheck className="text-green-600" />, bgColor: "bg-green-50" },
             { title: "CPCT Preparation", desc: "Special batches for MP CPCT exam with focus on typing speed and theory accuracy.", icon: <GraduationCap className="text-purple-600" />, bgColor: "bg-purple-50" },
             { title: "Job Oriented AI Courses", desc: "Stay ahead with Generative AI tools like ChatGPT, Midjourney for workplace productivity.", icon: <Zap className="text-yellow-600" />, bgColor: "bg-yellow-50" },
@@ -213,13 +216,13 @@ export default function Home() {
                  }}
                />
                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-12">
-                  <p className="text-xs font-black uppercase tracking-widest text-orange-400 mb-1">Director</p>
+                  <p className="text-xs font-black uppercase tracking-widest text-brand-primary mb-1">Director</p>
                   <h4 className="text-xl font-bold text-white uppercase tracking-tighter">Radhe Sharma (Steno Sir)</h4>
                </div>
              </div>
            </div>
            <div className="lg:w-2/3 space-y-8">
-              <div className="inline-block px-4 py-1 bg-orange-100 text-brand-primary rounded-full font-black text-xs uppercase tracking-widest shadow-sm">Director&apos;s Message</div>
+              <div className="inline-block px-4 py-1 bg-blue-100 text-brand-primary rounded-full font-black text-xs uppercase tracking-widest shadow-sm">Director&apos;s Message</div>
               <h2 className="text-4xl lg:text-5xl font-black text-zinc-900 leading-tight">FREE Demo Class & Special Discount for 2026 Batch!</h2>
               <div className="relative">
                 <span className="absolute -top-6 -left-4 text-8xl text-zinc-100 font-serif pointer-events-none select-none">&ldquo;</span>
@@ -302,7 +305,7 @@ export default function Home() {
                   { title: "Small Batches", icon: <Zap /> },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl">
-                    <div className="text-orange-400">{item.icon}</div>
+                    <div className="text-brand-primary">{item.icon}</div>
                     <span className="font-bold">{item.title}</span>
                   </div>
                 ))}
@@ -312,15 +315,15 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-6">Frequently Asked Questions</h3>
               <div className="space-y-6 text-sm">
                 <div className="border-b border-white/10 pb-4">
-                  <p className="font-bold text-orange-400 mb-2">How to increase typing speed?</p>
+                  <p className="font-bold text-brand-primary mb-2">How to increase typing speed?</p>
                   <p className="text-zinc-400">Regular practice, maintaining correct posture, and not looking at the keyboard are key. Use our tutor lessons to master the finger positions.</p>
                 </div>
                 <div className="border-b border-white/10 pb-4">
-                  <p className="font-bold text-orange-400 mb-2">What is KrutiDev to Unicode?</p>
+                  <p className="font-bold text-brand-primary mb-2">What is KrutiDev to Unicode?</p>
                   <p className="text-zinc-400">KrutiDev is a font-based encoding while Unicode is a global standard. Our converter helps you use KrutiDev text on the web easily.</p>
                 </div>
                 <div>
-                  <p className="font-bold text-orange-400 mb-2">Are these tools free?</p>
+                  <p className="font-bold text-brand-primary mb-2">Are these tools free?</p>
                   <p className="text-zinc-400">Yes, every tool at Vivekananda Shorthand (Steno) & Computer Coaching Classes is 100% free to use for students and professionals.</p>
                 </div>
               </div>
@@ -332,7 +335,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-brand-primary rounded-[40px] p-12 text-center text-white space-y-8 shadow-2xl shadow-orange-500/40">
+          <div className="bg-brand-primary rounded-[40px] p-12 text-center text-white space-y-8 shadow-2xl shadow-blue-500/40">
             <h2 className="text-3xl md:text-5xl font-black">Ready to Start Practicing?</h2>
             <p className="text-xl text-white/80 font-medium">Join thousands of students who have improved their typing speed with our tools.</p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -376,7 +379,7 @@ export default function Home() {
                  <X size={24} />
                </button>
                <h3 className="text-2xl font-black mb-1">Course Enrolment</h3>
-               <p className="text-orange-400 font-bold uppercase tracking-widest text-xs">
+               <p className="text-brand-primary font-bold uppercase tracking-widest text-xs">
                  {selectedCourse ? `Interested in ${selectedCourse}` : "Get in Touch"}
                </p>
             </div>
@@ -429,7 +432,7 @@ export default function Home() {
                </div>
                <button 
                  type="submit"
-                 className="w-full bg-brand-primary hover:bg-orange-600 text-white p-5 rounded-2xl font-black text-lg shadow-xl shadow-orange-500/20 transition-all active:scale-95 flex items-center justify-center gap-3"
+                 className="w-full bg-brand-primary hover:bg-blue-700 text-white p-5 rounded-2xl font-black text-lg shadow-xl shadow-blue-500/20 transition-all active:scale-95 flex items-center justify-center gap-3"
                >
                  Submit Inquiry <ArrowRight size={20} />
                </button>

@@ -11,15 +11,15 @@ const notoHindi = Noto_Sans_Devanagari({
 });
 
 export const viewport = {
-  themeColor: "#f97316",
+  themeColor: "#003399",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
 };
 
 export const metadata: Metadata = {
-  title: "Vivekananda Shorthand (Steno) & Computer Coaching Classes",
-  description: "Learn Typing and Shorthand with Vivekananda Shorthand (Steno) & Computer Coaching Classes",
+  title: "Vivekananda Shorthand (Steno)& Computer Classes",
+  description: "Learn Typing and Shorthand with Vivekananda Shorthand (Steno)& Computer Classes",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
