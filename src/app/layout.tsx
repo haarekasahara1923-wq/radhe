@@ -18,8 +18,8 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Emax Computer Education Center",
-  description: "Advanced White-label Typing Practice Platform for Computer Institutes",
+  title: "Vivekananda Shorthand (Steno) & Computer Coaching Classes",
+  description: "Learn Typing and Shorthand with Vivekananda Shorthand (Steno) & Computer Coaching Classes",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -51,4 +51,3 @@ export default function RootLayout({
     </html>
   );
 }
-

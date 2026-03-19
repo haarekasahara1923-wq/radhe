@@ -249,7 +249,7 @@ export default function DynamicTypingPage() {
             )}
           />
           <div className="absolute bottom-4 right-4 text-xs font-bold text-zinc-300 uppercase tracking-widest pointer-events-none text-right">
-            By Emax Computer Education Center
+            By Vivekananda Shorthand (Steno) & Computer Coaching Classes
           </div>
         </div>
 

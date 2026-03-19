@@ -107,7 +107,7 @@ export default function Home() {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-zinc-900 leading-[1.1]">
-              Master Skills at <span className="text-brand-primary">Emax Computer Education Center</span>
+              Master Skills at <span className="text-brand-primary">Vivekananda Shorthand (Steno) & Computer Coaching Classes</span>
             </h1>
             
             <p className="text-xl text-zinc-500 font-medium">
@@ -163,7 +163,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div className="text-center w-full">
-            <h2 className="text-4xl font-black text-zinc-900 tracking-tight">Emax Professional Courses</h2>
+            <h2 className="text-4xl font-black text-zinc-900 tracking-tight">Vivekananda Professional Courses</h2>
             <p className="text-zinc-500 mt-3 font-bold uppercase tracking-widest text-sm">&quot;Shape Your Future With Digital Skills&quot;</p>
             <div className="w-24 h-1.5 bg-brand-primary mx-auto mt-4 rounded-full" />
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="font-bold text-orange-400 mb-2">Are these tools free?</p>
-                  <p className="text-zinc-400">Yes, every tool at Emax Computer Education Center is 100% free to use for students and professionals.</p>
+                  <p className="text-zinc-400">Yes, every tool at Vivekananda Shorthand (Steno) & Computer Coaching Classes is 100% free to use for students and professionals.</p>
                 </div>
               </div>
             </div>

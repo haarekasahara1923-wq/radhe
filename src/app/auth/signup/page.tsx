@@ -83,7 +83,7 @@ export default function SignupPage() {
             Account Banayein 🎉
           </h2>
           <p className="mt-2 text-sm text-zinc-500 font-medium">
-            Emax mein join karein — sirf naam aur mobile number chahiye!
+            Vivekananda mein join karein — sirf naam aur mobile number chahiye!
           </p>
         </div>
 

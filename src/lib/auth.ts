@@ -24,7 +24,7 @@ export const authOptions: NextAuthOptions = {
           return {
             id:      "admin",
             name:    "Administrator",
-            email:   "admin@emax.local",
+            email:   "admin@vivekananda.local",
             role:    "admin",
           };
         }

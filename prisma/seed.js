@@ -7,14 +7,14 @@ async function main() {
 
   // 1. Create Default Institute
   const institute = await prisma.institute.upsert({
-    where: { domain: 'emax.typing.lab' },
+    where: { domain: 'vivekananda.typing.lab' },
     update: {},
     create: {
-      name: 'E-Max Computer Education Center',
+      name: 'Vivekananda Shorthand (Steno) & Computer Coaching Classes',
       logo: '/logo.png',
       primaryColor: '#ff6600',
       secondaryColor: '#1a1a1a',
-      domain: 'emax.typing.lab',
+      domain: 'vivekananda.typing.lab',
     },
   });
 
@@ -25,7 +25,7 @@ async function main() {
     create: {
       name: 'John Doe',
       contact: '1234567890',
-      email: 'student@emax.com',
+      email: 'student@vivekananda.com',
       password: 'password123',
       instituteId: institute.id,
     },
