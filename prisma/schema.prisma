@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Institute {
+  id              String   @id @default(cuid())
+  name            String
+  logo            String?
+  primaryColor    String   @default("#ff6600")
+  secondaryColor  String   @default("#1a1a1a")
+  domain          String   @unique
+  students        Student[]
+  createdAt       DateTime @default(now())
+}
+
+model Student {
+  id          String    @id @default(cuid())
+  name        String
+  contact     String    @unique   // Mobile No — used for login (required & unique)
+  whatsapp    String?             // Optional WhatsApp No
+  email       String?   @unique   // Optional email
+  password    String?             // No longer required
+  instituteId String?
+  institute   Institute? @relation(fields: [instituteId], references: [id])
+  results     TypingResult[]
+  createdAt   DateTime  @default(now())
+}
+
+model TypingParagraph {
+  id        String   @id @default(cuid())
+  language  String   // "Hindi" or "English"
+  difficulty String  // "Beginner", "Intermediate", "Advanced"
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+}
+
+model TypingResult {
+  id        String   @id @default(cuid())
+  studentId String
+  student   Student  @relation(fields: [studentId], references: [id])
+  language  String
+  wpm       Float
+  accuracy  Float
+  errors    Int
+  duration  Int      // in seconds
+  createdAt DateTime @default(now())
+}
