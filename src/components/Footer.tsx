@@ -65,15 +65,15 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex gap-3">
                 <MapPin className="text-brand-primary shrink-0" size={18} />
-                <span>2nd Floor, Above Hero Agency, InFront of VRG Girls College, Gwalior(MP)-474006</span>
+                <span>Near Krishna Plaza, Patri Road, Gwalior(MP)</span>
               </li>
               <li className="flex gap-3">
                 <Phone className="text-brand-primary shrink-0" size={18} />
-                <span>+91 7999453467</span>
+                <span>+91 7987068754</span>
               </li>
               <li className="flex gap-3">
                 <Mail className="text-brand-primary shrink-0" size={18} />
-                <span>support@vivekananda.wapiflow.site</span>
+                <span>support@vscc.wapiflow.site</span>
               </li>
             </ul>
           </div>

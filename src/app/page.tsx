@@ -85,7 +85,7 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `*New Course Enquiry*\n\n*Student Name:* ${formData.name}\n*Course:* ${selectedCourse || "General Inquiry"}\n*WhatsApp:* ${formData.whatsapp}\n*Contact:* ${formData.contact}\n*Email:* ${formData.email}`;
-    const whatsappUrl = `https://wa.me/917999453467?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/917987068754?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
     setIsModalOpen(false);
   };
@@ -205,16 +205,16 @@ export default function Home() {
              <div className="w-full aspect-[4/5] bg-zinc-100 rounded-[32px] overflow-hidden border-4 border-white shadow-2xl relative">
                {/* eslint-disable-next-line @next/next/no-img-element */}
                <img 
-                 src="/girraj-sir.jpg" 
-                 alt="Girraj Sharma Sir"
+                 src="/director.jpg" 
+                 alt="Radhe Sharma (Steno Sir)"
                  className="w-full h-full object-cover object-top"
                  onError={(e) => {
-                   (e.target as HTMLImageElement).src = "https://ui-avatars.com/api/?name=Girraj+Sharma&background=000&color=fff&size=512";
+                   (e.target as HTMLImageElement).src = "https://ui-avatars.com/api/?name=Radhe+Sharma&background=000&color=fff&size=512";
                  }}
                />
                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-12">
                   <p className="text-xs font-black uppercase tracking-widest text-orange-400 mb-1">Director</p>
-                  <h4 className="text-xl font-bold text-white uppercase tracking-tighter">Girraj Sharma Sir</h4>
+                  <h4 className="text-xl font-bold text-white uppercase tracking-tighter">Radhe Sharma (Steno Sir)</h4>
                </div>
              </div>
            </div>
@@ -228,7 +228,7 @@ export default function Home() {
                 </p>
                 <div className="mt-4 flex items-center gap-3">
                    <div className="w-12 h-0.5 bg-brand-primary rounded-full" />
-                   <span className="font-black text-zinc-900 text-lg">Girraj Sharma Sir</span>
+                    <span className="font-black text-zinc-900 text-lg">Radhe Sharma (Steno Sir)</span>
                 </div>
               </div>
               
@@ -237,7 +237,7 @@ export default function Home() {
                     <Phone className="text-brand-primary" size={24} />
                     <div>
                       <p className="text-xs font-black uppercase text-zinc-400">Call/WhatsApp Now</p>
-                      <p className="font-bold text-lg text-zinc-900">7999453467</p>
+                       <p className="font-bold text-lg text-zinc-900">7987068754</p>
                     </div>
                  </div>
               </div>
