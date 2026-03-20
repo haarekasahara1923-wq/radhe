@@ -110,6 +110,9 @@ export default function DynamicTypingPage() {
         {!isFullScreen && (
           <div className="mb-8 space-y-4">
             <h1 className="text-3xl font-black text-zinc-900 flex items-center gap-3">
+              <div className="p-2 bg-brand-primary rounded-xl text-white">
+                <Languages size={24} />
+              </div>
               {capitalLang} Online Typing {lang === "hindi" ? <span className="text-zinc-400 font-medium">(Remington Gail / Mangal)</span> : (lang !== "english" && <span className="text-zinc-400 font-medium">(Phonetic English to {capitalLang})</span>)}
             </h1>
             <p className="text-zinc-500 font-medium max-w-3xl">
