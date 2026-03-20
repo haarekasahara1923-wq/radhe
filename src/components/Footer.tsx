@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand section */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+              <div className="w-16 h-10 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
                 VSCC
               </div>
               <span className="text-2xl font-extrabold tracking-tight text-white leading-none">

@@ -77,11 +77,11 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-9 h-9 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-blue-500/20">
+            <div className="w-14 h-9 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-blue-500/20">
               VSCC
             </div>
             <div className="flex flex-col">
-              <span className="text-[16px] font-black tracking-tighter text-[#000000] leading-none uppercase whitespace-nowrap">
+              <span className="text-[16px] font-black tracking-tight text-[#000000] leading-none uppercase whitespace-nowrap px-1">
                 Vivekananda
               </span>
               <span className="text-[10px] font-black tracking-widest text-brand-primary leading-none uppercase mt-0.5 whitespace-nowrap">

@@ -19,6 +19,18 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+// Remington Gail / Standard Hindi Mapping 
+const HINDI_KEY_MAP: Record<string, string> = {
+  'q': 'ौ', 'w': 'ै', 'e': 'ा', 'r': 'ी', 't': 'ू', 'y': 'ब', 'u': 'ह', 'i': 'ग', 'o': 'द', 'p': 'ज',
+  'a': 'ो', 's': 'े', 'd': 'अ', 'f': 'ि', 'g': 'ु', 'h': 'प', 'j': 'र', 'k': 'क', 'l': 'त', ';': 'च',
+  'z': 'ण', 'x': 'ं', 'c': 'म', 'v': 'न', 'b': 'व', 'n': 'ल', 'm': 'स', ',': 'य', '.': 'श', '/': 'ष',
+  ' ': ' ',
+  // Standard Gail caps mapping
+  'Q': 'ौ', 'W': 'ै', 'E': 'ा', 'R': 'ी', 'T': 'ू', 'Y': 'ब', 'U': 'ह', 'I': 'ग', 'O': 'द', 'P': 'ज',
+  'A': 'ो', 'S': 'े', 'D': 'अ', 'F': 'ि', 'G': 'ु', 'H': 'प', 'J': 'र', 'K': 'क', 'L': 'त', ':': 'च',
+  'Z': 'ण', 'X': 'ं', 'C': 'म', 'V': 'न', 'B': 'व', 'N': 'ल', 'M': 'स', '<': 'य', '>': 'श', '?': 'ष'
+};
+
 export default function HindiTypingPage() {
   const [text, setText] = useState("");
   const [fontSize, setFontSize] = useState(18);
@@ -101,11 +113,11 @@ export default function HindiTypingPage() {
               <div className="p-2 bg-brand-primary rounded-xl text-white">
                 <Languages size={24} />
               </div>
-              Hindi Online Typing <span className="text-zinc-400 font-medium">(Phonetic English to Hindi)</span>
+              Hindi Online Typing <span className="text-zinc-400 font-medium">(Remington Gail / Mangal)</span>
             </h1>
             <p className="text-zinc-500 font-medium max-w-3xl">
-              Type in English (Roman) script and it will automatically convert into Devanagari script. 
-              For example, type <span className="text-brand-primary font-bold">&quot;Bharat&quot;</span> and press space to get <span className="text-brand-primary font-bold">&quot;भारत&quot;</span>.
+              Standard Remington Gail keyboard mapping for Hindi typing. 
+              Matches the layout used in government examinations and professional tests.
             </p>
           </div>
         )}
@@ -230,9 +242,21 @@ export default function HindiTypingPage() {
           <textarea
             ref={textareaRef}
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e) => {
+              const newVal = e.target.value;
+              if (newVal.length > text.length) {
+                const addedText = newVal.slice(text.length);
+                let mappedText = "";
+                for (const char of addedText) {
+                  mappedText += HINDI_KEY_MAP[char] || char;
+                }
+                setText(text + mappedText);
+              } else {
+                setText(newVal);
+              }
+            }}
             style={{ fontSize: `${fontSize}px` }}
-            placeholder="Start typing in English to convert it to Hindi..."
+            placeholder="Start typing here using Remington Gail layout..."
             className={cn(
               "w-full bg-white border-x border-b border-zinc-200 p-8 min-h-[500px] outline-none transition-all font-mangal",
               isFullScreen && "min-h-[calc(100vh-80px)] border-none rounded-none"
@@ -252,17 +276,17 @@ export default function HindiTypingPage() {
                   How to use Hindi Online Typing?
                 </h3>
                 <div className="text-zinc-600 space-y-4 text-sm leading-relaxed">
-                  <p>
-                    1. Type the Hindi word phonetically using English letters. For example, if you want to type <strong>&quot;नमस्ते&quot;</strong>, type <strong>&quot;namaste&quot;</strong>.
+                    <p>
+                    1. Use the Remington Gail keyboard layout rules. For example, press &apos;j&apos; for &apos;र&apos; and &apos;k&apos; for &apos;क&apos;.
                   </p>
                   <p>
-                    2. After typing each word, press the <strong>SPACE</strong> key. The English word will automatically convert into Hindi.
+                    2. This tool supports Mangal Unicode font which is required for all state and central government exams.
                   </p>
                   <p>
-                    3. If you get the wrong word, press <strong>BACKSPACE</strong> and a list of alternative word suggestions will appear.
+                    3. Ensure your physical keyboard is in English mode; the tool will handle the Hindi mapping automatically.
                   </p>
                   <p>
-                    4. You can format the text using the toolbar above, copy it to clipboard, or save it as a document file.
+                    4. Use the toolbar to format the text, copy it, or save it as a .doc document file.
                   </p>
                 </div>
               </div>

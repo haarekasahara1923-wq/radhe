@@ -18,6 +18,18 @@ import { cn } from "@/lib/utils";
 import { useParams } from "next/navigation";
 import { Brain, Play, Pause } from "lucide-react";
 
+// Remington Gail / Standard Hindi Mapping 
+const HINDI_KEY_MAP: Record<string, string> = {
+  'q': 'ौ', 'w': 'ै', 'e': 'ा', 'r': 'ी', 't': 'ू', 'y': 'ब', 'u': 'ह', 'i': 'ग', 'o': 'द', 'p': 'ज',
+  'a': 'ो', 's': 'े', 'd': 'अ', 'f': 'ि', 'g': 'ु', 'h': 'प', 'j': 'र', 'k': 'क', 'l': 'त', ';': 'च',
+  'z': 'ण', 'x': 'ं', 'c': 'म', 'v': 'न', 'b': 'व', 'n': 'ल', 'm': 'स', ',': 'य', '.': 'श', '/': 'ष',
+  ' ': ' ',
+  // Standard Gail caps mapping
+  'Q': 'ौ', 'W': 'ै', 'E': 'ा', 'R': 'ी', 'T': 'ू', 'Y': 'ब', 'U': 'ह', 'I': 'ग', 'O': 'द', 'P': 'ज',
+  'A': 'ो', 'S': 'े', 'D': 'अ', 'F': 'ि', 'G': 'ु', 'H': 'प', 'J': 'र', 'K': 'क', 'L': 'त', ':': 'च',
+  'Z': 'ण', 'X': 'ं', 'C': 'म', 'V': 'न', 'B': 'व', 'N': 'ल', 'M': 'स', '<': 'य', '>': 'श', '?': 'ष'
+};
+
 export default function DynamicTypingPage() {
   const params = useParams();
   const lang = (params.lang as string) || "hindi";
@@ -98,15 +110,14 @@ export default function DynamicTypingPage() {
         {!isFullScreen && (
           <div className="mb-8 space-y-4">
             <h1 className="text-3xl font-black text-zinc-900 flex items-center gap-3">
-              <div className="p-2 bg-brand-primary rounded-xl text-white">
-                <Languages size={24} />
-              </div>
-              {capitalLang} Online Typing {lang !== "english" && <span className="text-zinc-400 font-medium">(Phonetic English to {capitalLang})</span>}
+              {capitalLang} Online Typing {lang === "hindi" ? <span className="text-zinc-400 font-medium">(Remington Gail / Mangal)</span> : (lang !== "english" && <span className="text-zinc-400 font-medium">(Phonetic English to {capitalLang})</span>)}
             </h1>
             <p className="text-zinc-500 font-medium max-w-3xl">
               {lang === "english" 
                 ? "Standard English typing tool for practice and document creation."
-                : `Type in English (Roman) script and it will automatically convert into ${capitalLang} script.`}
+                : lang === "hindi" 
+                  ? "Standard Remington Gail keyboard mapping for Hindi typing. Matches the layout used in government examinations."
+                  : `Type in English (Roman) script and it will automatically convert into ${capitalLang} script.`}
             </p>
           </div>
         )}
@@ -234,9 +245,21 @@ export default function DynamicTypingPage() {
           <textarea
             ref={textareaRef}
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e) => {
+              const newVal = e.target.value;
+              if (lang === 'hindi' && newVal.length > text.length) {
+                const addedText = newVal.slice(text.length);
+                let mappedText = "";
+                for (const char of addedText) {
+                  mappedText += HINDI_KEY_MAP[char] || char;
+                }
+                setText(text + mappedText);
+              } else {
+                setText(newVal);
+              }
+            }}
             style={{ fontSize: `${fontSize}px` }}
-            placeholder={lang === "english" ? "Start typing here..." : `Start typing in English to convert it to ${capitalLang}...`}
+            placeholder={lang === "english" ? "Start typing here..." : lang === "hindi" ? "Start typing here using Remington Gail layout..." : `Start typing in English to convert it to ${capitalLang}...`}
             className={cn(
               "w-full bg-white border-x border-b border-zinc-200 p-8 min-h-[500px] outline-none transition-all",
               lang !== "english" ? "font-mangal" : "font-sans",
@@ -259,6 +282,12 @@ export default function DynamicTypingPage() {
                 <div className="text-zinc-600 space-y-4 text-sm leading-relaxed">
                   {lang === "english" ? (
                     <p>Simply type your text in the box above. You can use the toolbar to format, copy, or save your document.</p>
+                  ) : lang === "hindi" ? (
+                    <>
+                      <p>1. Use the Remington Gail keyboard layout rules. For example, press &apos;j&apos; for &apos;र&apos; and &apos;k&apos; for &apos;क&apos;.</p>
+                      <p>2. This tool supports Mangal Unicode font which is required for exams.</p>
+                      <p>3. Ensure your physical keyboard is in English mode.</p>
+                    </>
                   ) : (
                     <>
                       <p>
