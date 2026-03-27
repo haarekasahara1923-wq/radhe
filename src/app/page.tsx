@@ -152,7 +152,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative lg:block hidden animate-in zoom-in duration-1000">
+            <div className="relative block mt-12 lg:mt-0 animate-in zoom-in duration-1000">
               <div className="absolute inset-0 bg-brand-primary/10 rounded-[60px] blur-3xl -z-10" />
               <div className="relative rounded-[48px] overflow-hidden border-8 border-white shadow-2xl skew-x-1 hover:skew-x-0 transition-transform duration-500 group">
                 <Image 
@@ -162,9 +162,9 @@ export default function Home() {
                   height={600}
                   className="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-700" 
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-                   <p className="text-orange-400 font-black uppercase tracking-[0.2em] text-xs mb-1">Live Learning</p>
-                   <h4 className="text-white font-bold text-xl uppercase tracking-tighter">Practical Training in Progress</h4>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 sm:p-8">
+                   <p className="text-orange-400 font-black uppercase tracking-[0.2em] text-[10px] sm:text-xs mb-1">Live Learning</p>
+                   <h4 className="text-white font-bold text-lg sm:text-xl uppercase tracking-tighter">Practical Training in Progress</h4>
                 </div>
               </div>
             </div>
@@ -197,36 +197,41 @@ export default function Home() {
         {/* Courses Grid from Ad Creative */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-24">
           {[
-            { title: "Social Media Marketing", desc: "Expert training in Facebook, Instagram & Google Ads to boost any business online.", img: "/images/course-social.png", bgColor: "bg-orange-50" },
-            { title: "DCA / PGDCA", desc: "Get university-recognized diplomas in computer applications for govt & private jobs.", img: "/images/course-dca.png", bgColor: "bg-orange-50" },
-            { title: "Tally Prime with GST", desc: "Master professional accounting, inventory management, and GST filing from scratch.", img: "/images/course-tally.png", bgColor: "bg-green-50" },
-            { title: "CPCT Preparation", desc: "Special batches for MP CPCT exam with focus on typing speed and theory accuracy.", img: "/images/course-cpct.png", bgColor: "bg-purple-50" },
-            { title: "Job Oriented AI Courses", desc: "Stay ahead with Generative AI tools like ChatGPT, Midjourney for workplace productivity.", img: "/images/course-ai.png", bgColor: "bg-yellow-50" },
-            { title: "ITI Training", desc: "Technical vocational training for all trades with practical focus on employability.", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop", bgColor: "bg-zinc-100" },
-            { title: "Digital Marketing", desc: "Join our comprehensive course on SEO, Content Marketing, and Online Strategy.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop", bgColor: "bg-sky-50" },
-            { title: "Academic Degrees", desc: "Admission guidance for BBA, BCA, BTech, B.Com, MBA & MTech programs.", img: "https://images.unsplash.com/photo-1523050335456-c38730b0e140?w=400&h=400&fit=crop", bgColor: "bg-red-50" },
-            { title: "Hindi/English Shorthand with Hindi Steno ITI", desc: "Master professional Shorthand (Steno) for government stenographers and ITI certifications.", img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=400&fit=crop", bgColor: "bg-orange-50" },
+            { title: "Social Media Marketing", desc: "Expert training in Facebook, Instagram & Google Ads to boost any business online.", img: "/images/course-social.png" },
+            { title: "DCA / PGDCA", desc: "Get university-recognized diplomas in computer applications for govt & private jobs.", img: "/images/course-dca.png" },
+            { title: "Tally Prime with GST", desc: "Master professional accounting, inventory management, and GST filing from scratch.", img: "/images/course-tally.png" },
+            { title: "CPCT Preparation", desc: "Special batches for MP CPCT exam with focus on typing speed and theory accuracy.", img: "/images/course-cpct.png" },
+            { title: "Job Oriented AI Courses", desc: "Stay ahead with Generative AI tools like ChatGPT, Midjourney for workplace productivity.", img: "/images/course-ai.png" },
+            { title: "ITI Training", desc: "Technical vocational training for all trades with practical focus on employability.", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop" },
+            { title: "Digital Marketing", desc: "Join our comprehensive course on SEO, Content Marketing, and Online Strategy.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" },
+            { title: "Academic Degrees", desc: "Admission guidance for BBA, BCA, BTech, B.Com, MBA & MTech programs.", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop" },
+            { title: "Hindi/English Shorthand with Hindi Steno ITI", desc: "Master professional Shorthand (Steno) for government stenographers and ITI certifications.", img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop" },
           ].map((course, idx) => (
-            <div key={idx} className="p-8 bg-white border border-zinc-200 rounded-[40px] hover:border-brand-primary shadow-sm hover:shadow-2xl transition-all duration-300 group relative flex flex-col items-start text-left overflow-hidden">
-               <div className={cn("absolute top-0 right-0 w-32 h-32 -mr-8 -mt-8 opacity-10 group-hover:scale-110 group-hover:opacity-20 transition-all duration-500 rounded-full overflow-hidden")}>
+            <div key={idx} className="bg-white border border-zinc-200 rounded-[32px] hover:border-brand-primary shadow-sm hover:shadow-2xl transition-all duration-500 group relative flex flex-col overflow-hidden text-left">
+               <div className="h-48 w-full overflow-hidden relative">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={course.img} alt="" className="w-full h-full object-cover" />
+                  <img src={course.img} alt={course.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                     <span className="text-white text-[10px] font-black uppercase tracking-[0.2em] bg-brand-primary px-3 py-1 rounded-full shadow-lg">Professional</span>
+                  </div>
                </div>
-               <div className={cn("w-16 h-16 rounded-[24px] mb-8 overflow-hidden border-2 border-white shadow-md group-hover:scale-110 transition-transform")}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={course.img} alt={course.title} className="w-full h-full object-cover" />
+               
+               <div className="p-6 flex flex-col flex-1">
+                 <h3 className="text-lg font-black text-zinc-900 mb-3 group-hover:text-brand-primary transition-colors leading-tight min-h-[3rem] line-clamp-2">{course.title}</h3>
+                 <p className="text-zinc-500 text-xs font-medium leading-relaxed mb-6 line-clamp-3">{course.desc}</p>
+                 
+                 <div className="mt-auto">
+                    <button 
+                      onClick={() => handleEnrol(course.title)}
+                      className="pt-4 border-t border-zinc-100 w-full flex items-center justify-between group-hover:border-brand-primary transition-colors"
+                    >
+                      <span className="text-[10px] font-black text-brand-primary uppercase tracking-widest">Enrolment Open</span>
+                      <div className="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                        <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+                      </div>
+                    </button>
+                 </div>
                </div>
-               <h3 className="text-xl font-black text-zinc-900 mb-4 group-hover:text-brand-primary transition-colors leading-tight">{course.title}</h3>
-               <p className="text-zinc-500 text-sm font-medium leading-relaxed mb-6">{course.desc}</p>
-                <div className="mt-auto w-full">
-                  <button 
-                    onClick={() => handleEnrol(course.title)}
-                    className="pt-6 border-t border-zinc-100 w-full flex items-center justify-between group-hover:border-brand-primary transition-colors"
-                  >
-                    <span className="text-xs font-bold text-brand-primary uppercase tracking-widest">Enrolment Open</span>
-                    <ArrowRight size={18} className="text-brand-primary transition-transform group-hover:translate-x-1" />
-                  </button>
-                </div>
             </div>
           ))}
         </div>
