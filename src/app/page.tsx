@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { 
   Keyboard, 
@@ -12,13 +13,10 @@ import {
   TrendingUp,
   Award,
   Zap,
-  GraduationCap,
   Users,
   Briefcase,
   BadgeCheck,
-  CheckCircle2,
   Phone,
-  ShieldCheck,
   X
 } from "lucide-react";
 
@@ -95,10 +93,11 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white pt-16 pb-20 lg:pt-24 lg:pb-32 border-b border-zinc-200">
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="/images/hero.png" 
             alt="Student Typing" 
-            className="w-full h-full object-cover opacity-10 blur-[2px]"
+            fill
+            className="object-cover opacity-10 blur-[2px]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-white" />
         </div>
@@ -156,10 +155,11 @@ export default function Home() {
             <div className="relative lg:block hidden animate-in zoom-in duration-1000">
               <div className="absolute inset-0 bg-brand-primary/10 rounded-[60px] blur-3xl -z-10" />
               <div className="relative rounded-[48px] overflow-hidden border-8 border-white shadow-2xl skew-x-1 hover:skew-x-0 transition-transform duration-500 group">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
+                <Image 
                   src="/images/hero.png" 
                   alt="Student Typing" 
+                  width={800}
+                  height={600}
                   className="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-700" 
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8">
