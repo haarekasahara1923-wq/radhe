@@ -77,7 +77,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-14 h-9 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-blue-500/20">
+            <div className="w-14 h-9 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-orange-500/20">
               VSCC
             </div>
             <div className="flex flex-col">
@@ -130,7 +130,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/auth/signup"
-                  className="px-4 py-1.5 bg-brand-primary text-white text-sm font-bold rounded-full hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 whitespace-nowrap"
+                  className="px-4 py-1.5 bg-brand-primary text-white text-sm font-bold rounded-full hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20 whitespace-nowrap"
                 >
                   Create Account
                 </Link>
@@ -275,7 +275,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/auth/signup"
-                  className="flex justify-center w-full px-4 py-3 bg-brand-primary text-white font-bold rounded-xl shadow-lg shadow-blue-500/20"
+                  className="flex justify-center w-full px-4 py-3 bg-brand-primary text-white font-bold rounded-xl shadow-lg shadow-orange-500/20"
                   onClick={() => setIsOpen(false)}
                 >
                   Create Account

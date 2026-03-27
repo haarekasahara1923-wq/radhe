@@ -15,7 +15,7 @@ export default function DownloadPage() {
       <div className="max-w-5xl mx-auto px-4">
         <div className="mb-12 space-y-4">
           <h1 className="text-4xl font-black text-zinc-900 flex items-center gap-4">
-            <div className="p-3 bg-blue-500 rounded-2xl text-white shadow-lg">
+            <div className="p-3 bg-orange-500 rounded-2xl text-white shadow-lg">
               <Download size={32} />
             </div>
             Download Typing Resources
@@ -32,7 +32,7 @@ export default function DownloadPage() {
               className="bg-white border border-zinc-200 p-6 rounded-[32px] flex items-center justify-between hover:shadow-lg transition-all"
             >
                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-blue-50 text-blue-500 rounded-xl">
+                  <div className="p-3 bg-orange-50 text-orange-500 rounded-xl">
                     <FileDown size={24} />
                   </div>
                   <div>
@@ -40,7 +40,7 @@ export default function DownloadPage() {
                      <p className="text-xs text-zinc-400 font-bold uppercase tracking-widest">{font.size} • {font.type}</p>
                   </div>
                </div>
-               <button className="px-6 py-2 bg-zinc-900 text-white rounded-xl text-sm font-bold hover:bg-blue-600 transition-colors">
+               <button className="px-6 py-2 bg-zinc-900 text-white rounded-xl text-sm font-bold hover:bg-orange-600 transition-colors">
                  Download
                </button>
             </div>

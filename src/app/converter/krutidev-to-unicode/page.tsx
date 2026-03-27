@@ -86,8 +86,8 @@ export default function KrutiDevConverter() {
             >
               {output || <span className="text-zinc-400 italic">Your converted text will appear here...</span>}
             </div>
-            <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 flex gap-3">
-              <AlertCircle className="text-blue-500 shrink-0" size={20} />
+            <div className="bg-orange-50 border border-orange-100 rounded-2xl p-4 flex gap-3">
+              <AlertCircle className="text-orange-500 shrink-0" size={20} />
               <p className="text-xs text-blue-800 font-medium leading-relaxed">
                 <strong>Why Convert?</strong> KrutiDev is a font-dependent encoding. If the other person doesn&apos;t have the font, they will see gibberish. Unicode is the standard for the internet.
               </p>

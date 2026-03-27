@@ -164,7 +164,7 @@ export default function DynamicTypingPage() {
             </button>
             <button 
               onClick={handleDownload}
-              className="flex items-center gap-2 px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-xl text-sm font-bold transition-all"
+              className="flex items-center gap-2 px-4 py-2 bg-orange-50 hover:bg-orange-100 text-orange-600 rounded-xl text-sm font-bold transition-all"
             >
               <Download size={16} /> Save as .DOC
             </button>

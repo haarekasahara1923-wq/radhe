@@ -21,8 +21,8 @@ export default function MetricsDisplay() {
       subLabel: "Percentage",
       value: `${accuracy}%`, 
       icon: Target, 
-      color: "text-blue-500", 
-      bg: "bg-blue-50 dark:bg-blue-950/20",
+      color: "text-orange-500", 
+      bg: "bg-orange-50 dark:bg-orange-950/20",
       description: "Typing precision"
     },
     { 

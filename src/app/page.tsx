@@ -35,7 +35,7 @@ const tools = [
   },
   {
     category: "Typing Tests",
-    icon: <FileText className="text-blue-500" size={24} />,
+    icon: <FileText className="text-orange-500" size={24} />,
     items: [
       { name: "English Typing Test", href: "/typing-test?lang=English", desc: "Check your speed in English" },
       { name: "Hindi Typing Test", href: "/typing-test?lang=Hindi", desc: "Hindi Mangal/KrutiDev Test" },
@@ -96,12 +96,12 @@ export default function Home() {
       <section className="relative overflow-hidden bg-white pt-16 pb-20 lg:pt-24 lg:pb-32 border-b border-zinc-200">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-5 pointer-events-none">
           <div className="absolute top-10 left-10 w-96 h-96 bg-brand-primary rounded-full blur-[120px]" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-500 rounded-full blur-[120px]" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-500 rounded-full blur-[120px]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-3xl mx-auto space-y-8">
-            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-brand-primary px-4 py-1.5 rounded-full text-sm font-bold animate-bounce">
+            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-100 text-brand-primary px-4 py-1.5 rounded-full text-sm font-bold animate-bounce">
               <Zap size={16} fill="currentColor" />
               <span>Gwalior&apos;s #1 Computer Education Center</span>
             </div>
@@ -120,7 +120,7 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Link 
                 href="/typing-test?lang=English" 
-                className="bg-brand-primary hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-blue-500/20 transition-all hover:-translate-y-1 flex items-center gap-2"
+                className="bg-brand-primary hover:bg-orange-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-orange-500/20 transition-all hover:-translate-y-1 flex items-center gap-2"
               >
                 English Typing Test <ArrowRight size={20} />
               </Link>
@@ -175,8 +175,8 @@ export default function Home() {
         {/* Courses Grid from Ad Creative */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-24">
           {[
-            { title: "Social Media Marketing", desc: "Expert training in Facebook, Instagram & Google Ads to boost any business online.", icon: <TrendingUp className="text-blue-600" />, bgColor: "bg-blue-50" },
-            { title: "DCA / PGDCA", desc: "Get university-recognized diplomas in computer applications for govt & private jobs.", icon: <FileText className="text-blue-600" />, bgColor: "bg-blue-50" },
+            { title: "Social Media Marketing", desc: "Expert training in Facebook, Instagram & Google Ads to boost any business online.", icon: <TrendingUp className="text-orange-600" />, bgColor: "bg-orange-50" },
+            { title: "DCA / PGDCA", desc: "Get university-recognized diplomas in computer applications for govt & private jobs.", icon: <FileText className="text-orange-600" />, bgColor: "bg-orange-50" },
             { title: "Tally Prime with GST", desc: "Master professional accounting, inventory management, and GST filing from scratch.", icon: <BadgeCheck className="text-green-600" />, bgColor: "bg-green-50" },
             { title: "CPCT Preparation", desc: "Special batches for MP CPCT exam with focus on typing speed and theory accuracy.", icon: <GraduationCap className="text-purple-600" />, bgColor: "bg-purple-50" },
             { title: "Job Oriented AI Courses", desc: "Stay ahead with Generative AI tools like ChatGPT, Midjourney for workplace productivity.", icon: <Zap className="text-yellow-600" />, bgColor: "bg-yellow-50" },
@@ -222,7 +222,7 @@ export default function Home() {
              </div>
            </div>
            <div className="lg:w-2/3 space-y-8">
-              <div className="inline-block px-4 py-1 bg-blue-100 text-brand-primary rounded-full font-black text-xs uppercase tracking-widest shadow-sm">Director&apos;s Message</div>
+              <div className="inline-block px-4 py-1 bg-orange-100 text-brand-primary rounded-full font-black text-xs uppercase tracking-widest shadow-sm">Director&apos;s Message</div>
               <h2 className="text-4xl lg:text-5xl font-black text-zinc-900 leading-tight">FREE Demo Class & Special Discount for 2026 Batch!</h2>
               <div className="relative">
                 <span className="absolute -top-6 -left-4 text-8xl text-zinc-100 font-serif pointer-events-none select-none">&ldquo;</span>
@@ -335,7 +335,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-brand-primary rounded-[40px] p-12 text-center text-white space-y-8 shadow-2xl shadow-blue-500/40">
+          <div className="bg-brand-primary rounded-[40px] p-12 text-center text-white space-y-8 shadow-2xl shadow-orange-500/40">
             <h2 className="text-3xl md:text-5xl font-black">Ready to Start Practicing?</h2>
             <p className="text-xl text-white/80 font-medium">Join thousands of students who have improved their typing speed with our tools.</p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -432,7 +432,7 @@ export default function Home() {
                </div>
                <button 
                  type="submit"
-                 className="w-full bg-brand-primary hover:bg-blue-700 text-white p-5 rounded-2xl font-black text-lg shadow-xl shadow-blue-500/20 transition-all active:scale-95 flex items-center justify-center gap-3"
+                 className="w-full bg-brand-primary hover:bg-orange-600 text-white p-5 rounded-2xl font-black text-lg shadow-xl shadow-orange-500/20 transition-all active:scale-95 flex items-center justify-center gap-3"
                >
                  Submit Inquiry <ArrowRight size={20} />
                </button>
