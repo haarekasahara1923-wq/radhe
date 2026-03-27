@@ -94,56 +94,78 @@ export default function Home() {
     <div className="bg-zinc-50 min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white pt-16 pb-20 lg:pt-24 lg:pb-32 border-b border-zinc-200">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-5 pointer-events-none">
-          <div className="absolute top-10 left-10 w-96 h-96 bg-brand-primary rounded-full blur-[120px]" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-500 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/hero.png" 
+            alt="Student Typing" 
+            className="w-full h-full object-cover opacity-10 blur-[2px]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-white" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center max-w-3xl mx-auto space-y-8">
-            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-100 text-brand-primary px-4 py-1.5 rounded-full text-sm font-bold animate-bounce">
-              <Zap size={16} fill="currentColor" />
-              <span>Gwalior&apos;s #1 Computer Education Center</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-zinc-900 leading-[1.1]">
-              Master Skills at <br />
-              <span className="text-brand-primary">Vivekananda</span><br />
-              <span className="text-zinc-700">Shorthand (Steno) &</span><br />
-              <span className="text-brand-primary">Computer Classes</span>
-            </h1>
-            
-            <p className="text-xl text-zinc-500 font-medium">
-              Free online tools for Hindi & English Typing, Speed Tests, Font Converters, and much more. Start practicing now and boost your productivity!
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <Link 
-                href="/typing-test?lang=English" 
-                className="bg-brand-primary hover:bg-orange-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-orange-500/20 transition-all hover:-translate-y-1 flex items-center gap-2"
-              >
-                English Typing Test <ArrowRight size={20} />
-              </Link>
-              <Link 
-                href="/typing-test?lang=Hindi" 
-                className="bg-zinc-900 hover:bg-black text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-zinc-900/20 transition-all hover:-translate-y-1"
-              >
-                Hindi Typing Test
-              </Link>
-            </div>
-
-            <div className="flex justify-center items-center gap-8 pt-10 text-zinc-400">
-              <div className="flex items-center gap-2">
-                <TrendingUp size={20} />
-                <span className="text-sm font-bold uppercase tracking-wider">Fast Results</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-left space-y-8 animate-in slide-in-from-left duration-700">
+              <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-100 text-brand-primary px-4 py-1.5 rounded-full text-sm font-bold">
+                <Zap size={16} fill="currentColor" />
+                <span>Gwalior&apos;s #1 Computer Education Center</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Award size={20} />
-                <span className="text-sm font-bold uppercase tracking-wider">Accurate Metrics</span>
+              
+              <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-zinc-900 leading-[1.05]">
+                Master Skills <br />
+                at <span className="text-brand-primary">Vivekananda</span><br />
+                <span className="text-zinc-700">Shorthand &</span><br />
+                <span className="text-brand-primary">Computer</span>
+              </h1>
+              
+              <p className="text-xl text-zinc-500 font-medium">
+                Free online tools for Hindi & English Typing, Speed Tests, Font Converters, and professional certifications.
+              </p>
+
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Link 
+                  href="/typing-test?lang=English" 
+                  className="bg-brand-primary hover:bg-orange-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-orange-500/20 transition-all hover:-translate-y-1 flex items-center gap-2"
+                >
+                  Start Typing <ArrowRight size={20} />
+                </Link>
+                <Link 
+                  href="/typing-test?lang=Hindi" 
+                  className="bg-zinc-900 hover:bg-black text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-zinc-900/20 transition-all hover:-translate-y-1"
+                >
+                  Hindi Test
+                </Link>
               </div>
-              <div className="flex items-center gap-2">
-                <Monitor size={20} />
-                <span className="text-sm font-bold uppercase tracking-wider">Exam Ready</span>
+
+              <div className="flex items-center gap-8 pt-6 text-zinc-400">
+                <div className="flex items-center gap-2">
+                  <TrendingUp size={20} className="text-brand-primary" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Fast Results</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Award size={20} className="text-brand-primary" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Accurate</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Monitor size={20} className="text-brand-primary" />
+                  <span className="text-xs font-bold uppercase tracking-wider">Exam Ready</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative lg:block hidden animate-in zoom-in duration-1000">
+              <div className="absolute inset-0 bg-brand-primary/10 rounded-[60px] blur-3xl -z-10" />
+              <div className="relative rounded-[48px] overflow-hidden border-8 border-white shadow-2xl skew-x-1 hover:skew-x-0 transition-transform duration-500 group">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/images/hero.png" 
+                  alt="Student Typing" 
+                  className="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-700" 
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+                   <p className="text-orange-400 font-black uppercase tracking-[0.2em] text-xs mb-1">Live Learning</p>
+                   <h4 className="text-white font-bold text-xl uppercase tracking-tighter">Practical Training in Progress</h4>
+                </div>
               </div>
             </div>
           </div>
@@ -175,29 +197,36 @@ export default function Home() {
         {/* Courses Grid from Ad Creative */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-24">
           {[
-            { title: "Social Media Marketing", desc: "Expert training in Facebook, Instagram & Google Ads to boost any business online.", icon: <TrendingUp className="text-orange-600" />, bgColor: "bg-orange-50" },
-            { title: "DCA / PGDCA", desc: "Get university-recognized diplomas in computer applications for govt & private jobs.", icon: <FileText className="text-orange-600" />, bgColor: "bg-orange-50" },
-            { title: "Tally Prime with GST", desc: "Master professional accounting, inventory management, and GST filing from scratch.", icon: <BadgeCheck className="text-green-600" />, bgColor: "bg-green-50" },
-            { title: "CPCT Preparation", desc: "Special batches for MP CPCT exam with focus on typing speed and theory accuracy.", icon: <GraduationCap className="text-purple-600" />, bgColor: "bg-purple-50" },
-            { title: "Job Oriented AI Courses", desc: "Stay ahead with Generative AI tools like ChatGPT, Midjourney for workplace productivity.", icon: <Zap className="text-yellow-600" />, bgColor: "bg-yellow-50" },
-            { title: "ITI Training", desc: "Technical vocational training for all trades with practical focus on employability.", icon: <Monitor className="text-zinc-700" />, bgColor: "bg-zinc-100" },
-            { title: "Digital Marketing", desc: "Join our comprehensive course on SEO, Content Marketing, and Online Strategy.", icon: <Users className="text-sky-600" />, bgColor: "bg-sky-50" },
-            { title: "Academic Degrees", desc: "Admission guidance for BBA, BCA, BTech, B.Com, MBA & MTech programs.", icon: <CheckCircle2 className="text-red-600" />, bgColor: "bg-red-50" },
-            { title: "Medical & Nursing", desc: "Enroll in DPharma, BPharma, D.Ed and other high-demand medical diplomas.", icon: <ShieldCheck className="text-teal-600" />, bgColor: "bg-teal-50" },
+            { title: "Social Media Marketing", desc: "Expert training in Facebook, Instagram & Google Ads to boost any business online.", img: "/images/course-social.png", bgColor: "bg-orange-50" },
+            { title: "DCA / PGDCA", desc: "Get university-recognized diplomas in computer applications for govt & private jobs.", img: "/images/course-dca.png", bgColor: "bg-orange-50" },
+            { title: "Tally Prime with GST", desc: "Master professional accounting, inventory management, and GST filing from scratch.", img: "/images/course-tally.png", bgColor: "bg-green-50" },
+            { title: "CPCT Preparation", desc: "Special batches for MP CPCT exam with focus on typing speed and theory accuracy.", img: "/images/course-cpct.png", bgColor: "bg-purple-50" },
+            { title: "Job Oriented AI Courses", desc: "Stay ahead with Generative AI tools like ChatGPT, Midjourney for workplace productivity.", img: "/images/course-ai.png", bgColor: "bg-yellow-50" },
+            { title: "ITI Training", desc: "Technical vocational training for all trades with practical focus on employability.", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop", bgColor: "bg-zinc-100" },
+            { title: "Digital Marketing", desc: "Join our comprehensive course on SEO, Content Marketing, and Online Strategy.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop", bgColor: "bg-sky-50" },
+            { title: "Academic Degrees", desc: "Admission guidance for BBA, BCA, BTech, B.Com, MBA & MTech programs.", img: "https://images.unsplash.com/photo-1523050335456-c38730b0e140?w=400&h=400&fit=crop", bgColor: "bg-red-50" },
+            { title: "Hindi/English Shorthand with Hindi Steno ITI", desc: "Master professional Shorthand (Steno) for government stenographers and ITI certifications.", img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=400&fit=crop", bgColor: "bg-orange-50" },
           ].map((course, idx) => (
-            <div key={idx} className="p-10 bg-white border border-zinc-200 rounded-[40px] hover:border-brand-primary shadow-sm hover:shadow-2xl transition-all duration-300 group relative flex flex-col items-start text-left">
-               <div className={cn("p-4 rounded-[20px] mb-8 group-hover:scale-110 transition-transform", course.bgColor)}>
-                 {course.icon}
+            <div key={idx} className="p-8 bg-white border border-zinc-200 rounded-[40px] hover:border-brand-primary shadow-sm hover:shadow-2xl transition-all duration-300 group relative flex flex-col items-start text-left overflow-hidden">
+               <div className={cn("absolute top-0 right-0 w-32 h-32 -mr-8 -mt-8 opacity-10 group-hover:scale-110 group-hover:opacity-20 transition-all duration-500 rounded-full overflow-hidden")}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={course.img} alt="" className="w-full h-full object-cover" />
                </div>
-               <h3 className="text-2xl font-black text-zinc-900 mb-4 group-hover:text-brand-primary transition-colors">{course.title}</h3>
-               <p className="text-zinc-600 text-base font-medium leading-relaxed">{course.desc}</p>
-                <button 
-                  onClick={() => handleEnrol(course.title)}
-                  className="mt-8 pt-6 border-t border-zinc-100 w-full flex items-center justify-between group-hover:border-brand-primary transition-colors"
-                >
-                  <span className="text-sm font-bold text-brand-primary uppercase tracking-widest">Enrolment Open</span>
-                  <ArrowRight size={18} className="text-brand-primary transition-transform group-hover:translate-x-1" />
-                </button>
+               <div className={cn("w-16 h-16 rounded-[24px] mb-8 overflow-hidden border-2 border-white shadow-md group-hover:scale-110 transition-transform")}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={course.img} alt={course.title} className="w-full h-full object-cover" />
+               </div>
+               <h3 className="text-xl font-black text-zinc-900 mb-4 group-hover:text-brand-primary transition-colors leading-tight">{course.title}</h3>
+               <p className="text-zinc-500 text-sm font-medium leading-relaxed mb-6">{course.desc}</p>
+                <div className="mt-auto w-full">
+                  <button 
+                    onClick={() => handleEnrol(course.title)}
+                    className="pt-6 border-t border-zinc-100 w-full flex items-center justify-between group-hover:border-brand-primary transition-colors"
+                  >
+                    <span className="text-xs font-bold text-brand-primary uppercase tracking-widest">Enrolment Open</span>
+                    <ArrowRight size={18} className="text-brand-primary transition-transform group-hover:translate-x-1" />
+                  </button>
+                </div>
             </div>
           ))}
         </div>
