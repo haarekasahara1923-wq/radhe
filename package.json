@@ -1,13 +1,39 @@
 {
   "name": "typing-app",
   "version": "0.1.0",
-  "private": true,
+  "main": "electron-main.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "electron-dev": "set NODE_ENV=development&& electron .",
+    "electron-build": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "com.typingapp.desktop",
+    "productName": "Typing App",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "asar": false,
+    "files": [
+      "**/*",
+      "!.git",
+      "!dist-electron",
+      "!node_modules/.cache"
+    ]
   },
   "prisma": {
     "seed": "node prisma/seed.js"
@@ -37,6 +63,8 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "electron": "^41.3.0",
+    "electron-builder": "^26.8.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.35",
     "postcss": "^8",
